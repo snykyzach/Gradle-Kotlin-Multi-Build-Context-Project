@@ -47,7 +47,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
 
-    // Vulnerable package examples
-    implementation 'com.squareup.okhttp3:okhttp:3.2.0' // Known vulnerabilities
-    implementation 'commons-io:commons-io:2.4' // Older vulnerable version
+    // ✅ Vulnerable but Android-compatible packages
+    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
+    implementation 'commons-io:commons-io:2.4'
+    implementation 'commons-codec:commons-codec:1.10'
+    implementation 'com.google.code.gson:gson:2.2.4'
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.46'
 }
