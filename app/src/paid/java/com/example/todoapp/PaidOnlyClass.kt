@@ -1,6 +1,8 @@
 package com.example.todoapp
 
+import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+import android.widget.EditText
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.URL
@@ -9,12 +11,22 @@ import java.security.MessageDigest
 
 class PaidOnlyClass {
 
-    fun insecureQuery(userInput: String, db: SQLiteDatabase) {
+    // --- SQL Injection ---
+    fun insecureQuery(context: Context, db: SQLiteDatabase) {
+        val userInput = getUserInput() // Simulated untrusted input
         val query = "SELECT * FROM users WHERE name = '$userInput'"
         db.rawQuery(query, null)
     }
 
-    fun insecureCommandInjection(userInput: String) {
+    fun getUserInput(): String {
+        return "attacker_input"
+    }
+
+    // --- Command Injection ---
+    fun insecureCommandInjection() {
+        val scanner = java.util.Scanner(System.`in`)
+        print("Enter command args: ")
+        val userInput = scanner.nextLine() // Simulated untrusted input for command
         val command = "ls $userInput"
         try {
             val process = Runtime.getRuntime().exec(command)
@@ -29,12 +41,16 @@ class PaidOnlyClass {
         }
     }
 
-    fun weakHashing(data: String): String {
-        val md = MessageDigest.getInstance("MD5")
+    // --- Weak Hashing ---
+    fun weakHashing(context: Context): String {
+        val editText = EditText(context)
+        val data = editText.text.toString() // Simulated user input
+        val md = MessageDigest.getInstance("MD5") // Weak hash
         val hashBytes = md.digest(data.toByteArray())
         return hashBytes.joinToString("") { "%02x".format(it) }
     }
 
+    // --- Hardcoded Secrets ---
     fun hardcodedSecrets() {
         val apiKey = "sk_live_51H8dK7EXAMPLEAPIKEYSHOULDNOTBEHERE"
         val password = "P@ssw0rd123!"
@@ -42,6 +58,7 @@ class PaidOnlyClass {
         println("Password: $password")
     }
 
+    // --- Insecure SSL Connection ---
     fun insecureSSLConnection() {
         try {
             val url = URL("https://example.com")
@@ -53,6 +70,7 @@ class PaidOnlyClass {
         }
     }
 
+    // --- Insecure Trust Manager ---
     fun insecureTrustManager() {
         val trustAllCerts = arrayOf<javax.net.ssl.TrustManager>(
             object : javax.net.ssl.X509TrustManager {
@@ -65,7 +83,10 @@ class PaidOnlyClass {
         sslContext.init(null, trustAllCerts, java.security.SecureRandom())
     }
 
-    fun pathTraversal(userInput: String) {
+    // --- Path Traversal ---
+    fun pathTraversal(context: Context) {
+        val editText = EditText(context)
+        val userInput = editText.text.toString() // Simulated untrusted input
         val filePath = "/data/data/com.example.todoapp/files/$userInput"
         val file = java.io.File(filePath)
         if (file.exists()) {
@@ -73,16 +94,23 @@ class PaidOnlyClass {
         }
     }
 
-    fun dynamicClassLoading(userInput: String) {
+    // --- Dynamic Class Loading (Reflection) ---
+    fun dynamicClassLoading() {
+        val scanner = java.util.Scanner(System.`in`)
+        print("Enter class name to load: ")
+        val userInput = scanner.nextLine() // Simulated untrusted input
         try {
-            val clazz = Class.forName(userInput)
+            val clazz = Class.forName(userInput) // Dangerous reflection
             println("Class loaded: $clazz")
         } catch (e: ClassNotFoundException) {
             println("Class not found")
         }
     }
 
-    fun insecureBroadcast(context: android.content.Context, message: String) {
+    // --- Insecure Broadcast ---
+    fun insecureBroadcast(context: Context) {
+        val editText = EditText(context)
+        val message = editText.text.toString() // Simulated untrusted message
         val intent = android.content.Intent()
         intent.action = "com.example.todoapp.INSECURE_ACTION"
         intent.putExtra("message", message)
