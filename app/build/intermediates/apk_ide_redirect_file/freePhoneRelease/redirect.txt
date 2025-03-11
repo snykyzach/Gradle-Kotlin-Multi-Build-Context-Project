@@ -1,0 +1,2 @@
+#- File Locator -
+listingFile=../../../outputs/apk/freePhone/release/output-metadata.json

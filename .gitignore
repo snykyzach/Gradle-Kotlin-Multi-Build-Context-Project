@@ -1,0 +1,51 @@
+# Gradle files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration files
+local.properties
+.idea/
+*.iml
+
+# Android Studio & VSCode config
+.vscode/
+*.code-workspace
+
+# Log files
+*.log
+
+# Mac system files
+.DS_Store
+
+# Keystore files (if you ever generate signing keys)
+*.jks
+*.keystore
+
+# APKs / outputs
+*.apk
+*.ap_
+
+# Crash reports
+crashlytics-build.properties
+
+# Generated files
+captures/
+output.json
+
+# Kotlin/Java compiled classes
+*.class
+
+# Jetpack Compose build artifacts
+*.cache/
+
+# Android test results
+test-results/
+androidTest-results/
+
+# Temporary files
+*.tmp
+*.temp
+*.orig
+
+# Node/JS (if any React Native or

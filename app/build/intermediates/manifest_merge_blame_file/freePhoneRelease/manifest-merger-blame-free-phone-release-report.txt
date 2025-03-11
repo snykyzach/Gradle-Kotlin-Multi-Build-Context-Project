@@ -1,0 +1,44 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.todoapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml
+10
+11    <application
+11-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml:4:5-17:19
+12        android:allowBackup="true"
+12-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml:5:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.6.0] /Users/zach/.gradle/caches/8.13/transforms/6b5d349ee37a5ccdce340bddae5f88f0/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+14        android:label="@string/app_name"
+14-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml:6:9-41
+15        android:supportsRtl="true"
+15-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml:7:9-35
+16        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+16-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml:8:9-67
+17        <activity
+17-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml:10:9-15:20
+18            android:name="com.example.todoapp.MainActivity"
+18-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml:10:19-47
+19            android:exported="true" >
+19-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml:10:48-71
+20            <intent-filter>
+20-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml:11:13-14:29
+21                <action android:name="android.intent.action.MAIN" />
+21-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml:12:17-69
+21-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml:12:25-66
+22
+23                <category android:name="android.intent.category.LAUNCHER" />
+23-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml:13:17-77
+23-->/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app/src/main/AndroidManifest.xml:13:27-74
+24            </intent-filter>
+25        </activity>
+26    </application>
+27
+28</manifest>

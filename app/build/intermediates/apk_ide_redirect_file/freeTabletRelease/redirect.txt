@@ -1,0 +1,2 @@
+#- File Locator -
+listingFile=../../../outputs/apk/freeTablet/release/output-metadata.json

@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/Users/zach/Projects/Gradle-Kotlin-Multi-Build-Context-Project/app"
+    name=":app"
+    type="APP"
+    maven="Gradle-Kotlin-Multi-Build-Context-Project:app:"
+    gradle="7.4.2"
+    buildFolder="build"
+    bootClassPath="/Users/zach/Library/Android/sdk/platforms/android-31/android.jar:/Users/zach/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
+    javaSourceLevel="11"
+    compileTarget="android-31"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="paidTabletRelease"/>
+</lint-module>
